@@ -37,7 +37,7 @@
       "start": "May 2026",
       "end": "July 2026",
       "current": false,
-      "supervisor": "Mentor: Jeripothula Prudviraj",
+      "supervisor": "Mentor: Jeripothula Prudviraj, Vikram Jamwal",
       "description": "Human-AI co-creation: aesthetic state representations for autonomous reinforcement-learning agents.",
       "achievements": [
         "Architected deep neural networks that extract high-level aesthetic and stylistic features as state representations for autonomous RL agents, optimising policy-gradient reward functions for iterative generative decision-making.",
