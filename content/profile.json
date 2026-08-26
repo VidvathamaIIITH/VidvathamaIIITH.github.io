@@ -50,12 +50,6 @@
       "label": "LinkedIn",
       "handle": "vidvathama-ramesh",
       "url": "https://www.linkedin.com/in/vidvathama-ramesh"
-    },
-    {
-      "id": "huggingface",
-      "label": "Hugging Face",
-      "handle": "Vidvathama",
-      "url": "https://huggingface.co/Vidvathama"
     }
   ]
 }
