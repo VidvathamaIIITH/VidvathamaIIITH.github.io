@@ -1,0 +1,135 @@
+{
+  "heading": "Coursework",
+  "intro": "Course projects and academic work. Coursework is listed alongside the courses that produced it.",
+  "courses": [
+    "Statistical Methods in AI",
+    "Natural Language Processing",
+    "Advanced Natural Language Processing",
+    "Processor Architecture",
+    "Digital Systems and Logic",
+    "VLSI Design",
+    "Signal Processing",
+    "Information Theory",
+    "Probability and Random Processes",
+    "Systems Thinking",
+    "Functional Analysis",
+    "Data Structures and Algorithms",
+    "UAV Design (EC4.402)",
+    "Mobile Robotics"
+  ],
+  "items": [
+    {
+      "id": "higrec-anlp",
+      "title": "HiGrEC — Hierarchical Classification for Political Question Evasion",
+      "course": "Advanced NLP",
+      "courseCode": "ANLP",
+      "term": "January 2026",
+      "sortDate": "2026-01",
+      "team": "Team Nier_ANLP",
+      "problem": "Detecting when a political answer evades the question asked, over the QEvasion benchmark.",
+      "approach": "Selected SemEval-2026 Task 6 (CLARITY) as the shared task and designed a hierarchical classification system over the QEvasion benchmark.",
+      "results": "Shared task selected; system paper in preparation.",
+      "learned": "How much a label hierarchy that mirrors the structure of the phenomenon buys you over flat classification on the same data.",
+      "technologies": [
+        "NLP",
+        "Hierarchical Classification",
+        "Transformers"
+      ],
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "gyrocopter",
+      "title": "Gyrocopter (Autogyro) Design and Testing",
+      "course": "UAV Design",
+      "courseCode": "EC4.402",
+      "term": "March 2026",
+      "sortDate": "2026-03",
+      "team": "",
+      "problem": "Building and stabilising a free-spinning-rotor autogyro prototype, and sizing the rotor from first principles.",
+      "approach": "Assembled a free-spinning-rotor autogyro prototype (fixed-wing fuselage, forward-thrust BLDC propulsion) and configured ArduPilot/ArduPlane firmware for stabilisation assistance. Performed aerodynamic analysis — blade element method and airfoil selection — in XFLR5 and derived flight dynamics calculations for rotor sizing and stability.",
+      "results": "Working prototype with stabilisation-assisted firmware and an aerodynamic analysis supporting the rotor sizing.",
+      "learned": "Autorotation is unforgiving of sloppy rotor sizing — the aerodynamics have to be right before the firmware matters.",
+      "technologies": [
+        "ArduPilot",
+        "XFLR5",
+        "Aerodynamics",
+        "BLDC",
+        "Flight Dynamics"
+      ],
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "quadrotor-ros",
+      "title": "Quadrotor Trajectory Planning and ROS Simulation",
+      "course": "Mobile Robotics",
+      "courseCode": "",
+      "term": "March 2026",
+      "sortDate": "2026-03",
+      "team": "",
+      "problem": "Navigating a quadrotor through multiple waypoints, from desired acceleration down to attitude commands.",
+      "approach": "Derived acceleration-to-attitude control mappings (thrust, roll, pitch commands) for multi-waypoint quadrotor navigation and simulated the resulting trajectories in ROS.",
+      "results": "Simulated multi-waypoint trajectories in ROS from the derived control mappings.",
+      "learned": "The mapping from a desired acceleration to an attitude command is where the aircraft's physical limits actually enter the planner.",
+      "technologies": [
+        "MATLAB",
+        "Python",
+        "ROS",
+        "Control Theory"
+      ],
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "sequence-modeling",
+      "title": "Sequence Modeling: Cipher Decryption and Masked Language Modeling",
+      "course": "Introduction to NLP",
+      "courseCode": "INLP",
+      "term": "January 2026",
+      "sortDate": "2026-01",
+      "team": "",
+      "problem": "Building recurrent and state-space sequence models from scratch, without leaning on framework primitives.",
+      "approach": "Built custom RNN/LSTM models (without nn.RNN or nn.LSTM) for character-level cipher decryption, and SSM/BiLSTM models for masked language modeling; logged experiments to WandB and published models to Hugging Face.",
+      "results": "Working custom sequence models for both tasks, with experiment tracking and published model artefacts.",
+      "learned": "Writing the recurrence by hand makes the gradient-flow problems that motivate gating impossible to ignore.",
+      "technologies": [
+        "PyTorch",
+        "HuggingFace",
+        "WandB",
+        "RNN / LSTM",
+        "SSM"
+      ],
+      "links": [
+        {
+          "label": "Hugging Face — Vidvathama",
+          "url": "https://huggingface.co/Vidvathama"
+        }
+      ],
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "transformer-cnn-study",
+      "title": "Transformer, CNN, and Optimization Study",
+      "course": "Statistical Methods in AI",
+      "courseCode": "SMAI",
+      "term": "January 2026",
+      "sortDate": "2026-01",
+      "team": "",
+      "problem": "Isolating what architectural and optimiser choices actually contribute, rather than accepting defaults.",
+      "approach": "Implemented a decoder-only Transformer comparing Pre-Norm and Post-Norm configurations, a CNN with Grad-CAM interpretability, and an optimiser/normalisation ablation study on CIFAR-10.",
+      "results": "Comparative results across normalisation placement, optimiser choice, and normalisation strategy, with Grad-CAM attributions for the CNN.",
+      "learned": "Pre-Norm versus Post-Norm is a training-stability decision long before it is an accuracy decision.",
+      "technologies": [
+        "PyTorch",
+        "Transformers",
+        "CNN",
+        "Grad-CAM",
+        "CIFAR-10"
+      ],
+      "image": "",
+      "imageCaption": ""
+    }
+  ]
+}

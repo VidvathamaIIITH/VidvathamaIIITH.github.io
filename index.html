@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Vidvathama Ramesh — Visual Navigation &amp; Embodied Perception</title>
+    <meta
+      name="description"
+      content="Personal research site of Vidvathama Ramesh, undergraduate researcher at the Robotics Research Center, IIIT Hyderabad — visual navigation, embodied perception, dexterous manipulation, 3D reconstruction, and LLM systems."
+    />
+    <meta name="author" content="Vidvathama Ramesh" />
+    <link rel="canonical" href="https://vidvathamaiiith.github.io/" />
+
+    <!-- Paint the correct background before React mounts, so there is no flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') {
+            document.documentElement.setAttribute('data-theme', stored);
+          }
+        } catch (e) {
+          /* Storage can throw in private mode; the system theme is a fine fallback. */
+        }
+      })();
+    </script>
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Vidvathama Ramesh" />
+    <meta property="og:title" content="Vidvathama Ramesh — Visual Navigation &amp; Embodied Perception" />
+    <meta
+      property="og:description"
+      content="Undergraduate researcher at the Robotics Research Center, IIIT Hyderabad. Visual navigation, embodied perception, dexterous manipulation, 3D reconstruction, and LLM systems."
+    />
+    <meta property="og:url" content="https://vidvathamaiiith.github.io/" />
+    <meta property="og:image" content="https://vidvathamaiiith.github.io/media/portrait.jpeg" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vidvathama Ramesh — Visual Navigation &amp; Embodied Perception" />
+    <meta
+      name="twitter:description"
+      content="Undergraduate researcher at the Robotics Research Center, IIIT Hyderabad. Visual navigation, embodied perception, and LLM systems."
+    />
+    <meta name="twitter:image" content="https://vidvathamaiiith.github.io/media/portrait.jpeg" />
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfaf7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1013" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/media/portrait.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vidvathama Ramesh",
+        "url": "https://vidvathamaiiith.github.io/",
+        "image": "https://vidvathamaiiith.github.io/media/portrait.jpeg",
+        "jobTitle": "Undergraduate Researcher",
+        "email": "mailto:vidvathamaiiith@gmail.com",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "International Institute of Information Technology, Hyderabad",
+          "url": "https://www.iiit.ac.in/"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "International Institute of Information Technology, Hyderabad"
+        },
+        "knowsAbout": [
+          "Visual Navigation",
+          "Embodied Perception",
+          "Dexterous Manipulation",
+          "3D Reconstruction",
+          "Large Language Model Systems",
+          "Multi-Agent Reinforcement Learning",
+          "Processor Architecture"
+        ],
+        "sameAs": [
+          "https://github.com/VidvathamaIIITH",
+          "https://www.linkedin.com/in/vidvathama-ramesh",
+          "https://huggingface.co/Vidvathama"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; font-family: system-ui, sans-serif; max-width: 40rem; margin: 0 auto">
+        <h1>Vidvathama Ramesh</h1>
+        <p>
+          Undergraduate researcher at the Robotics Research Center, IIIT Hyderabad, working on visual
+          navigation, embodied perception, dexterous manipulation, 3D reconstruction, and LLM systems.
+        </p>
+        <p>This site needs JavaScript enabled. You can still reach me at
+          <a href="mailto:vidvathamaiiith@gmail.com">vidvathamaiiith@gmail.com</a>,
+          or view my <a href="/docs/Vidvathama_Ramesh_CV.pdf">CV</a> and
+          <a href="/docs/Vidvathama_Ramesh_Resume.pdf">résumé</a>.
+        </p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "heading": "Research",
+  "intro": "Ongoing and completed research threads. Each entry states the question being asked, the approach taken, and where the work currently stands.",
+  "items": [
+    {
+      "id": "vla-topological-navigation",
+      "title": "Vision-Language Navigation with Topological Graph Structure",
+      "shortDescription": "Integrating vision-language actions and models with topological graph structuring for robust navigation in unstructured environments.",
+      "question": "Can a topological graph give a vision-language policy the spatial memory it needs to navigate environments it was never trained on?",
+      "problem": "End-to-end vision-language navigation policies degrade in unstructured environments because they carry no persistent structure between observations. Metric maps are expensive and brittle; purely reactive policies forget.",
+      "approach": "Pair VLA/VLM policies with a topological graph built online from egocentric observation, using the graph as a sparse spatial memory that the language-conditioned policy can query and commit to during long-horizon traversal.",
+      "status": "In Progress",
+      "venue": "Robotics Research Center, IIIT Hyderabad",
+      "supervisor": "Prof. Sourav Garg",
+      "period": "May 2025 – Present",
+      "technologies": [
+        "PyTorch",
+        "VLA / VLM",
+        "Topological SLAM",
+        "ROS 2",
+        "Python"
+      ],
+      "links": [],
+      "relatedPublication": "3d-feedforward-mapping-paper",
+      "featured": true,
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "3d-feedforward-mapping",
+      "title": "Feedforward 3D Mapping for Visual Navigation",
+      "shortDescription": "Benchmarking feedforward 3D reconstruction models against established visual navigation pipelines.",
+      "question": "Do feedforward 3D reconstruction models produce maps good enough to navigate on, without the optimisation loop that classical pipelines depend on?",
+      "problem": "Classical visual navigation stacks rely on iterative geometric optimisation, which is slow and fragile under sparse or unstructured views. Feedforward reconstruction promises a map in a single pass, but its usefulness as a navigation substrate is unestablished.",
+      "approach": "Systematically benchmark models in the DUSt3R / MASt3R / CUT3R lineage against existing visual navigation pipelines, measuring reconstruction quality against downstream navigation performance rather than geometry metrics alone.",
+      "status": "In Progress",
+      "venue": "Robotics Research Center, IIIT Hyderabad",
+      "supervisor": "Prof. Sourav Garg",
+      "period": "Current",
+      "technologies": [
+        "DUSt3R",
+        "MASt3R",
+        "CUT3R",
+        "PyTorch",
+        "3D Vision"
+      ],
+      "links": [],
+      "relatedPublication": "3d-feedforward-mapping-paper",
+      "featured": true,
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "aesthetic-state-rl",
+      "title": "Aesthetic State Representations for Generative RL Agents",
+      "shortDescription": "Deep networks that extract high-level aesthetic and stylistic features as state representations for autonomous RL agents in human-AI co-creation.",
+      "question": "Can aesthetic and stylistic structure be extracted into a state representation stable enough for a policy-gradient agent to optimise against?",
+      "problem": "Generative decision-making agents need a state signal that captures how a work looks and reads, not just what it contains. Raw pixels are too high-dimensional and semantic labels too coarse for iterative creative refinement.",
+      "approach": "Architect deep neural networks that extract high-level aesthetic and stylistic features as state representations, optimise policy-gradient reward functions over them for iterative generative decision-making, and embed the result in a human-AI co-creation framework that adapts to human creative intent in real time.",
+      "status": "Completed",
+      "venue": "TCS Research",
+      "supervisor": "Mentor: Jeripothula Prudviraj",
+      "period": "May 2026 – July 2026",
+      "technologies": [
+        "PyTorch",
+        "Computer Vision",
+        "Policy Gradient RL",
+        "Python"
+      ],
+      "links": [
+        {
+          "label": "Related code — CanvasMind",
+          "url": "https://github.com/VidvathamaIIITH/RL_Multi_Agent_ART"
+        }
+      ],
+      "relatedPublication": "canvasmind",
+      "featured": true,
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "transcrowd-counting",
+      "title": "Transformer Pipelines for High-Density Crowd Counting",
+      "shortDescription": "A TransCrowd Transformer pipeline integrating spatio-temporal features to improve density estimation across large-scale datasets.",
+      "question": "Do spatio-temporal features improve density estimation in crowds dense enough that individual detection fails?",
+      "problem": "At high density, detection-based counting breaks down and regression-based estimators lose spatial fidelity. Single-frame models discard temporal consistency that is available in practice.",
+      "approach": "Implement a TransCrowd Transformer pipeline for high-density crowd counting, integrating spatio-temporal features to improve density estimation accuracy across large-scale datasets.",
+      "status": "Completed",
+      "venue": "Indian Institute of Technology Bombay",
+      "supervisor": "Prof. Vikram Bansal",
+      "period": "May 2025 – August 2025",
+      "technologies": [
+        "PyTorch",
+        "Transformers",
+        "OpenCV",
+        "Computer Vision"
+      ],
+      "links": [],
+      "relatedPublication": "",
+      "featured": false,
+      "image": "",
+      "imageCaption": ""
+    }
+  ]
+}

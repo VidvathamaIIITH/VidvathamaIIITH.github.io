@@ -1,0 +1,79 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Read-only by default; the deploy job widens this for itself only.
+permissions:
+  contents: read
+
+# A content commit from the admin portal should supersede an in-flight run
+# rather than queue behind it, but never cancel a deploy midway.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npx tsc -b
+
+      - name: Test
+        run: npm run test
+
+      # `npm run build` also runs scripts/postbuild.mjs, which writes 404.html
+      # (the SPA fallback that makes /admin survive a hard refresh), robots.txt
+      # and sitemap.xml against the real deployment URL.
+      - name: Build
+        env:
+          # Repository variable BASE_PATH lets the same source deploy to a user
+          # site ("/") or a project site ("/repo-name/") without a code change.
+          VITE_BASE_PATH: ${{ vars.BASE_PATH || '/' }}
+          SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io', github.repository_owner) }}
+          VITE_GITHUB_OWNER: ${{ github.repository_owner }}
+          VITE_GITHUB_REPO: ${{ github.event.repository.name }}
+          VITE_GITHUB_BRANCH: main
+        run: npm run build
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    # Publishes on a push to main and on a manual run; never from a pull request.
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

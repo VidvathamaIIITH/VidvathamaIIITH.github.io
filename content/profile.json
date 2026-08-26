@@ -1,0 +1,61 @@
+{
+  "name": "Vidvathama Ramesh",
+  "shortName": "Vidvathama",
+  "role": "Undergraduate Researcher",
+  "affiliation": "Robotics Research Center, IIIT Hyderabad",
+  "degree": "BTech + MS, Electronics and Communication Engineering",
+  "location": "Hyderabad, India",
+  "portrait": "media/portrait.jpeg",
+  "portraitAlt": "Portrait of Vidvathama Ramesh",
+  "portraitLabels": [
+    "Visual Navigation",
+    "Embodied AI",
+    "3D Vision",
+    "LLM Systems"
+  ],
+  "researchStatement": "I work on giving machines a usable understanding of space and language — visual navigation and embodied perception in unstructured environments, dexterous manipulation, and feedforward 3D scene reconstruction, alongside LLM systems for routing, evaluation, and safety.",
+  "tagline": "Visual navigation, embodied perception, and the systems that reason about them.",
+  "interestsLine": "Visual navigation · Dexterous manipulation · 3D reconstruction · LLM systems · Multi-agent RL",
+  "email": "vidvathamaiiith@gmail.com",
+  "phone": "+91 91089 34637",
+  "documents": {
+    "cv": {
+      "label": "Curriculum Vitae",
+      "description": "Full academic record — research, manuscripts, projects, coursework.",
+      "file": "docs/Vidvathama_Ramesh_CV.pdf",
+      "updated": "August 2026"
+    },
+    "resume": {
+      "label": "Résumé",
+      "description": "One-page industry résumé — experience, projects, skills.",
+      "file": "docs/Vidvathama_Ramesh_Resume.pdf",
+      "updated": "August 2026"
+    }
+  },
+  "socials": [
+    {
+      "id": "email",
+      "label": "Email",
+      "handle": "vidvathamaiiith@gmail.com",
+      "url": "mailto:vidvathamaiiith@gmail.com"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "handle": "VidvathamaIIITH",
+      "url": "https://github.com/VidvathamaIIITH"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "handle": "vidvathama-ramesh",
+      "url": "https://www.linkedin.com/in/vidvathama-ramesh"
+    },
+    {
+      "id": "huggingface",
+      "label": "Hugging Face",
+      "handle": "Vidvathama",
+      "url": "https://huggingface.co/Vidvathama"
+    }
+  ]
+}

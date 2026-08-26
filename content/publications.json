@@ -1,0 +1,105 @@
+{
+  "heading": "Publications & Manuscripts",
+  "intro": "Manuscripts in preparation and under review. Nothing listed here is a published paper — each entry states its exact status.",
+  "note": "Status accurate as of August 2026.",
+  "items": [
+    {
+      "id": "canvasmind",
+      "title": "CanvasMind: Multi-Agent Inference-Time RL for Creative AI",
+      "authors": [
+        "Vidvathama Ramesh",
+        "co-authors"
+      ],
+      "venue": "NeurIPS 2026 — Creative AI Track (Agency)",
+      "secondaryVenue": "ACM CHI 2026 — in progress",
+      "year": 2026,
+      "status": "Submitted",
+      "abstract": "A multi-agent creative-AI system in which generative agents co-paint a shared canvas under an inference-time reinforcement-learning layer using best-of-N search, a batched reward model, a persistent UCB1 bandit, and reward-triggered Reflexion self-correction. Agent interactions with misaligned per-agent rewards are modelled as a general-sum game; Shapley-value, empowerment, and Goodhart diagnostics identify and correct four RL defects, lifting composite quality from -0.05 to +1.66 at equal compute across a 4,000-session ablation.",
+      "topics": [
+        "Multi-Agent RL",
+        "Creative AI",
+        "Inference-Time Search"
+      ],
+      "paperUrl": "",
+      "arxivUrl": "",
+      "doi": "",
+      "codeUrl": "https://github.com/VidvathamaIIITH/RL_Multi_Agent_ART",
+      "projectPage": "",
+      "pdf": "",
+      "bibtex": "@misc{ramesh2026canvasmind,\n  title        = {CanvasMind: Multi-Agent Inference-Time RL for Creative AI},\n  author       = {Ramesh, Vidvathama},\n  year         = {2026},\n  note         = {Submitted to NeurIPS 2026 Creative AI Track (Agency); ACM CHI 2026 in preparation},\n  howpublished = {\\url{https://github.com/VidvathamaIIITH/RL_Multi_Agent_ART}}\n}"
+    },
+    {
+      "id": "3d-feedforward-mapping-paper",
+      "title": "3D Feedforward Mapping for Visual Navigation",
+      "authors": [
+        "Vidvathama Ramesh"
+      ],
+      "venue": "Robotics Research Center, IIIT Hyderabad",
+      "secondaryVenue": "",
+      "year": 2026,
+      "status": "In Preparation",
+      "abstract": "Benchmarking feedforward 3D mapping models in the DUSt3R / MASt3R / CUT3R lineage against established visual navigation pipelines, evaluating reconstruction quality by downstream navigation performance rather than geometry metrics alone.",
+      "topics": [
+        "3D Vision",
+        "Visual Navigation",
+        "Robotics"
+      ],
+      "paperUrl": "",
+      "arxivUrl": "",
+      "doi": "",
+      "codeUrl": "",
+      "projectPage": "",
+      "pdf": "",
+      "bibtex": "@misc{ramesh20263dmapping,\n  title  = {3D Feedforward Mapping for Visual Navigation},\n  author = {Ramesh, Vidvathama},\n  year   = {2026},\n  note   = {In preparation. Robotics Research Center, IIIT Hyderabad}\n}"
+    },
+    {
+      "id": "asp-routing-paper",
+      "title": "Adaptive Semantic Pipeline for LLM Routing",
+      "authors": [
+        "Vidvathama Ramesh"
+      ],
+      "venue": "ACL-format course paper (INLP)",
+      "secondaryVenue": "With full evaluation scripts, pipeline traces, and interactive demo",
+      "year": 2026,
+      "status": "In Preparation",
+      "abstract": "An eight-stage LLM routing pipeline that decomposes prompts into a semantic DAG and routes sub-tasks to strong or weak models via a 27-feature LightGBM router with BFS strong-inheritance, reaching 85.66% accuracy and 88.04% F1 while cutting inference cost by roughly 49% at 131 ms mean latency.",
+      "topics": [
+        "NLP",
+        "LLM Systems",
+        "Efficiency"
+      ],
+      "paperUrl": "",
+      "arxivUrl": "",
+      "doi": "",
+      "codeUrl": "https://github.com/VidvathamaIIITH/Adaptive-Semantic-Pipeline",
+      "projectPage": "",
+      "pdf": "",
+      "bibtex": "@misc{ramesh2026asp,\n  title        = {Adaptive Semantic Pipeline for LLM Routing},\n  author       = {Ramesh, Vidvathama},\n  year         = {2026},\n  note         = {ACL-format course paper, INLP},\n  howpublished = {\\url{https://github.com/VidvathamaIIITH/Adaptive-Semantic-Pipeline}}\n}"
+    },
+    {
+      "id": "higrec",
+      "title": "HiGrEC: Hierarchical Classification for Political Question Evasion Detection",
+      "authors": [
+        "Team Nier_ANLP",
+        "Vidvathama Ramesh"
+      ],
+      "venue": "SemEval-2026 Task 6 (CLARITY) — system paper",
+      "secondaryVenue": "",
+      "year": 2026,
+      "status": "In Preparation",
+      "abstract": "A hierarchical classification system over the QEvasion benchmark for SemEval-2026 Task 6 (CLARITY).",
+      "topics": [
+        "NLP",
+        "Classification",
+        "Shared Task"
+      ],
+      "paperUrl": "",
+      "arxivUrl": "",
+      "doi": "",
+      "codeUrl": "",
+      "projectPage": "",
+      "pdf": "",
+      "bibtex": "@misc{nieranlp2026higrec,\n  title  = {HiGrEC: Hierarchical Classification for Political Question Evasion Detection},\n  author = {Nier\\_ANLP and Ramesh, Vidvathama},\n  year   = {2026},\n  note   = {SemEval-2026 Task 6 (CLARITY) system paper, in preparation}\n}"
+    }
+  ]
+}

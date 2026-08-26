@@ -1,0 +1,60 @@
+{
+  "heading": "Currently Working On",
+  "intro": "Active threads as of August 2026.",
+  "items": [
+    {
+      "id": "icra-sprint",
+      "topic": "Feedforward 3D mapping as a navigation substrate",
+      "whyItMatters": "If a single-pass reconstruction model can produce maps that hold up under navigation, the geometric optimisation loop that most visual navigation stacks depend on becomes optional — which changes what is feasible on-robot.",
+      "investigating": "Benchmarking the DUSt3R / MASt3R / CUT3R lineage against existing visual navigation pipelines, scoring reconstructions by downstream navigation performance rather than geometry metrics alone.",
+      "progress": "Benchmarking sprint in progress at the Robotics Research Center.",
+      "literature": [
+        "DUSt3R",
+        "MASt3R",
+        "CUT3R"
+      ],
+      "relatedResearch": "3d-feedforward-mapping",
+      "lastUpdated": "August 2026"
+    },
+    {
+      "id": "vla-graph-nav",
+      "topic": "Topological structure for vision-language navigation",
+      "whyItMatters": "Language-conditioned policies are strong at interpreting an instruction and weak at remembering where they have been. Persistent topological structure is the cheapest way to give them that memory.",
+      "investigating": "How VLA/VLM policies behave when a topological graph, built online, is available as queryable spatial memory during long-horizon traversal in unstructured environments.",
+      "progress": "Ongoing at the Robotics Research Center under Prof. Sourav Garg.",
+      "literature": [
+        "Vision-Language Action models",
+        "Topological navigation"
+      ],
+      "relatedResearch": "vla-topological-navigation",
+      "lastUpdated": "August 2026"
+    },
+    {
+      "id": "leap-tactile",
+      "topic": "Tactile-visual fusion for dexterous manipulation",
+      "whyItMatters": "Vision underdetermines contact state. Whether simulated touch closes that gap well enough to transfer is the question that decides how much real hardware time the work needs.",
+      "investigating": "3D-vision and RL policies for a LEAP Hand in Isaac Lab, with tactile signal simulated through TacSL.",
+      "progress": "Model development ongoing at the Robotics Research Center.",
+      "literature": [
+        "TacSL",
+        "Isaac Lab",
+        "LEAP Hand"
+      ],
+      "relatedResearch": "",
+      "lastUpdated": "August 2026"
+    },
+    {
+      "id": "higrec-semeval",
+      "topic": "Hierarchical detection of political question evasion",
+      "whyItMatters": "Evasion is structured — a non-answer fails in a specific way — and a hierarchy that respects that structure should beat flat classification over the same labels.",
+      "investigating": "A hierarchical classification system over the QEvasion benchmark for SemEval-2026 Task 6 (CLARITY), as team Nier_ANLP.",
+      "progress": "Shared task selected; system paper in preparation.",
+      "literature": [
+        "SemEval-2026 Task 6 (CLARITY)",
+        "QEvasion benchmark"
+      ],
+      "relatedResearch": "",
+      "lastUpdated": "August 2026"
+    }
+  ]
+}

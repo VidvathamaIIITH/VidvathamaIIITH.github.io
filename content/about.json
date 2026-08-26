@@ -1,0 +1,63 @@
+{
+  "heading": "About",
+  "lead": "I am an undergraduate researcher at IIIT Hyderabad working at the intersection of robotics, computer vision, and language systems.",
+  "bio": [
+    "I am a BTech + MS student in Electronics and Communication Engineering at the International Institute of Information Technology, Hyderabad, and an undergraduate researcher at the Robotics Research Center under Prof. Sourav Garg.",
+    "My work centres on embodied perception: how an agent builds a representation of a space it has never seen, and how language can be grounded in that representation well enough to act on. In practice that means vision-language models paired with topological graph structure for navigation, feedforward 3D mapping for reconstruction, and 3D-vision-plus-RL policies for dexterous manipulation on a LEAP Hand.",
+    "Alongside the robotics work I build LLM systems — routing, evaluation, and safety pipelines — and study multi-agent reinforcement learning where reward misalignment is the interesting failure mode rather than an inconvenience."
+  ],
+  "motivation": "I am drawn to problems where a system has to commit to a decision under genuine uncertainty about the world — a robot that must move before it has mapped the room, a router that must choose a model before it has seen the answer. The engineering and the theory stay honest there.",
+  "facts": [
+    {
+      "label": "Institution",
+      "value": "IIIT Hyderabad"
+    },
+    {
+      "label": "Programme",
+      "value": "BTech + MS, ECE (2024 – 2028)"
+    },
+    {
+      "label": "Lab",
+      "value": "Robotics Research Center"
+    }
+  ],
+  "interests": [
+    {
+      "title": "Visual Navigation",
+      "description": "VLA/VLM-driven navigation with topological graph structure in unstructured environments."
+    },
+    {
+      "title": "Embodied Perception",
+      "description": "Representations an agent can act on, built online from egocentric observation."
+    },
+    {
+      "title": "Dexterous Manipulation",
+      "description": "3D-vision and RL policies for a LEAP Hand, with tactile simulation in Isaac Lab."
+    },
+    {
+      "title": "3D Reconstruction",
+      "description": "Feedforward scene reconstruction in the DUSt3R / MASt3R / CUT3R lineage."
+    },
+    {
+      "title": "LLM Systems",
+      "description": "Semantic routing, evaluation harnesses, NLI verification, and safety stacks."
+    },
+    {
+      "title": "Multi-Agent RL",
+      "description": "General-sum games, reward misalignment, Shapley and empowerment diagnostics."
+    },
+    {
+      "title": "Processor Architecture",
+      "description": "Pipelined RISC-V datapaths, hazard resolution, and digital systems design."
+    },
+    {
+      "title": "Systems & Concurrency",
+      "description": "External-memory algorithms, transaction control, POSIX systems programming."
+    }
+  ],
+  "exploring": [
+    "Grounding long-horizon language instructions in topological maps",
+    "Tactile-visual fusion for contact-rich manipulation",
+    "Evaluation methodology for multi-agent creative systems"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "heading": "Experience",
+  "intro": "Research positions, education, and recognition.",
+  "items": [
+    {
+      "id": "rrc-iiith",
+      "organization": "Robotics Research Center, IIIT Hyderabad",
+      "role": "Undergraduate Researcher",
+      "kind": "Research",
+      "location": "Hyderabad, India",
+      "start": "May 2025",
+      "end": "Present",
+      "current": true,
+      "supervisor": "Prof. Sourav Garg",
+      "description": "Embodied perception and manipulation research spanning vision-language navigation, feedforward 3D mapping, and dexterous control.",
+      "achievements": [
+        "Integrating Vision-Language Actions/Models (VLAs/VLMs) with topological graph structuring for robust visual navigation in unstructured environments.",
+        "Developing 3D-vision and RL models for dexterous manipulation on a LEAP Hand, with tactile simulation via TacSL in Isaac Lab.",
+        "Benchmarking feedforward 3D mapping models (DUSt3R/MASt3R/CUT3R lineage) against existing visual navigation pipelines."
+      ],
+      "technologies": [
+        "PyTorch",
+        "Isaac Lab",
+        "ROS 2",
+        "TacSL",
+        "3D Vision",
+        "Reinforcement Learning"
+      ],
+      "links": []
+    },
+    {
+      "id": "tcs-research",
+      "organization": "TCS Research",
+      "role": "Research Intern",
+      "kind": "Research",
+      "location": "Hyderabad, India",
+      "start": "May 2026",
+      "end": "July 2026",
+      "current": false,
+      "supervisor": "Mentor: Jeripothula Prudviraj",
+      "description": "Human-AI co-creation: aesthetic state representations for autonomous reinforcement-learning agents.",
+      "achievements": [
+        "Architected deep neural networks that extract high-level aesthetic and stylistic features as state representations for autonomous RL agents, optimising policy-gradient reward functions for iterative generative decision-making.",
+        "Engineered a human-AI co-creation framework integrating computer vision and RL for real-time agents that adapt to human creative intent.",
+        "Prepared submissions to NeurIPS 2026 (Creative AI Track: Agency) and ACM CHI 2026."
+      ],
+      "technologies": [
+        "PyTorch",
+        "Computer Vision",
+        "Policy Gradient RL",
+        "Python"
+      ],
+      "links": []
+    },
+    {
+      "id": "iitb-intern",
+      "organization": "Indian Institute of Technology Bombay",
+      "role": "Research Intern",
+      "kind": "Research",
+      "location": "Mumbai, India",
+      "start": "May 2025",
+      "end": "August 2025",
+      "current": false,
+      "supervisor": "Prof. Vikram Bansal",
+      "description": "Transformer-based density estimation for high-density crowd counting.",
+      "achievements": [
+        "Implemented a TransCrowd Transformer pipeline for high-density crowd counting, integrating spatio-temporal features to improve density estimation accuracy across large-scale datasets."
+      ],
+      "technologies": [
+        "PyTorch",
+        "Transformers",
+        "OpenCV",
+        "Computer Vision"
+      ],
+      "links": []
+    },
+    {
+      "id": "iiith-btech",
+      "organization": "International Institute of Information Technology, Hyderabad",
+      "role": "BTech + MS, Electronics and Communication Engineering",
+      "kind": "Education",
+      "location": "Hyderabad, India",
+      "start": "July 2024",
+      "end": "May 2028 (expected)",
+      "current": true,
+      "supervisor": "",
+      "description": "Dual-degree programme in Electronics and Communication Engineering.",
+      "achievements": [
+        "Dean's List for Academic Excellence — Top 5% of batch (Spring UG2).",
+        "Dean's List for Academic Excellence — Top 10% of batch (Monsoon UG3)."
+      ],
+      "technologies": [],
+      "links": []
+    }
+  ],
+  "honors": [
+    {
+      "id": "sud-life",
+      "title": "1st Prize — SUD Life Bank Hackathon",
+      "year": "2025",
+      "description": "Winning entry in the FinTech/Banking track: an intelligent insurance platform."
+    },
+    {
+      "id": "lloyds",
+      "title": "Top 10 Finalist — Lloyds IP&I Hackathon",
+      "year": "2025",
+      "description": "A voice-first IVR replacement using RAG (Whisper, GPT-4o, FAISS) to ground responses in policy documents and auto-file tickets. Separately, a recognised entry at the Lloyds Banking Agentic AI Hackathon."
+    },
+    {
+      "id": "deans-list",
+      "title": "Dean's List for Academic Excellence",
+      "year": "2025 – 2026",
+      "description": "Top 5% of batch (Spring UG2) and Top 10% of batch (Monsoon UG3)."
+    }
+  ]
+}
