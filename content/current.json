@@ -30,20 +30,6 @@
       "lastUpdated": "August 2026"
     },
     {
-      "id": "leap-tactile",
-      "topic": "Tactile-visual fusion for dexterous manipulation",
-      "whyItMatters": "Vision underdetermines contact state. Whether simulated touch closes that gap well enough to transfer is the question that decides how much real hardware time the work needs.",
-      "investigating": "3D-vision and RL policies for a LEAP Hand in Isaac Lab, with tactile signal simulated through TacSL.",
-      "progress": "Model development ongoing at the Robotics Research Center.",
-      "literature": [
-        "TacSL",
-        "Isaac Lab",
-        "LEAP Hand"
-      ],
-      "relatedResearch": "",
-      "lastUpdated": "August 2026"
-    },
-    {
       "id": "higrec-semeval",
       "topic": "Hierarchical detection of political question evasion",
       "whyItMatters": "Evasion is structured — a non-answer fails in a specific way — and a hierarchy that respects that structure should beat flat classification over the same labels.",
