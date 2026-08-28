@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync, readdirSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { content, CONTENT_KEYS, CONTENT_LABELS, asset } from '@/lib/content';
 import { SCHEMAS, blankFrom } from '@/admin/schema';
 import type { ContentKey } from '@/types/content';
@@ -144,5 +146,63 @@ describe('blankFrom()', () => {
     expect(row.technologies).toEqual([]);
     expect(row.metrics).toEqual([]);
     expect(typeof row.status).toBe('string');
+  });
+});
+
+describe('referenced assets exist on disk', () => {
+  // The site 404s silently when content points at a file that was deleted from
+  // the repository. Failing the build is louder and safer than shipping a dead
+  // link: the previous deploy keeps serving until the reference is corrected.
+  // Vitest runs from the project root, so this resolves the real public/ dir.
+  const publicDir = resolve(process.cwd(), 'public');
+
+  const referenced: { label: string; path: string }[] = [
+    { label: 'profile.documents.cv', path: content.profile.documents.cv.file },
+    { label: 'profile.documents.resume', path: content.profile.documents.resume.file },
+    { label: 'profile.portrait', path: content.profile.portrait },
+    ...content.research.items
+      .filter((r) => r.image)
+      .map((r) => ({ label: `research/${r.id}.image`, path: r.image })),
+    ...content.projects.items.flatMap((p) =>
+      [
+        p.image ? { label: `projects/${p.id}.image`, path: p.image } : null,
+        p.report ? { label: `projects/${p.id}.report`, path: p.report } : null,
+      ].filter(Boolean as unknown as (v: unknown) => v is { label: string; path: string }),
+    ),
+    ...content.coursework.items
+      .filter((c) => c.image)
+      .map((c) => ({ label: `coursework/${c.id}.image`, path: c.image })),
+    ...content.publications.items
+      .filter((p) => p.pdf)
+      .map((p) => ({ label: `publications/${p.id}.pdf`, path: p.pdf })),
+  ];
+
+  it('references at least the CV, the résumé and the portrait', () => {
+    expect(referenced.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it.each(referenced.map((r) => [r.label, r.path] as const))(
+    '%s -> public/%s exists',
+    (label, path) => {
+      // Only local assets are checked; absolute URLs are somebody else's server.
+      if (/^(https?:)?\/\//.test(path)) return;
+      const onDisk = resolve(publicDir, path.replace(/^\//, ''));
+      expect(
+        existsSync(onDisk),
+        `${label} points at "${path}" but public/${path} is missing. ` +
+          'Upload the file, or update the reference in the admin portal.',
+      ).toBe(true);
+    },
+  );
+
+  it('matches the exact filename case (GitHub Pages is case-sensitive)', () => {
+    for (const { label, path } of referenced) {
+      if (/^(https?:)?\/\//.test(path)) continue;
+      const rel = path.replace(/^\//, '');
+      const dir = resolve(publicDir, rel.split('/').slice(0, -1).join('/'));
+      const name = rel.split('/').pop() as string;
+      if (!existsSync(dir)) continue;
+      expect(readdirSync(dir), `${label}: case mismatch for "${name}"`).toContain(name);
+    }
   });
 });

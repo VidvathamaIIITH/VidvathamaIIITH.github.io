@@ -207,6 +207,7 @@ export default function AdminApp() {
 
         {/* --------------------------------------------------------- editor */}
         <main className="min-w-0 flex-1">
+          <DeployAlert deploy={deploy} />
           <Editor key={collection} collection={collection} token={session.token} requestMedia={requestMedia} />
         </main>
       </div>
@@ -221,6 +222,32 @@ export default function AdminApp() {
           }}
         />
       ) : null}
+    </div>
+  );
+}
+
+/**
+ * The site only updates when the deploy workflow succeeds. When it does not,
+ * saving keeps "working" while nothing reaches the live site — so a failure has
+ * to be loud here, not a small dot in the sidebar.
+ */
+function DeployAlert({ deploy }: { deploy: DeployState | null }) {
+  if (!deploy || deploy.status !== 'completed') return null;
+  if (deploy.conclusion === 'success') return null;
+
+  return (
+    <div role="alert" className="border-b border-[#a33]/30 bg-[#a33]/8 px-6 py-3.5">
+      <p className="text-[0.875rem] font-medium text-[#a33]">
+        The last deployment {deploy.conclusion === 'cancelled' ? 'was cancelled' : 'failed'} — the live
+        site is not showing your latest changes.
+      </p>
+      <p className="mt-1 text-[0.8125rem] leading-snug text-[var(--color-ink-2)]">
+        Your edits are safely committed; only publishing is stuck. Open the run to see why, then
+        re-run it. Publishing again also retries.{' '}
+        <a href={deploy.html_url} target="_blank" rel="noopener noreferrer" className="link-underline">
+          View the failed run
+        </a>
+      </p>
     </div>
   );
 }

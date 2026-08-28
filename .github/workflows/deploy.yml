@@ -11,10 +11,11 @@ on:
 permissions:
   contents: read
 
-# A content commit from the admin portal should supersede an in-flight run
-# rather than queue behind it, but never cancel a deploy midway.
+# One deployment at a time, and never cancel one that is already running —
+# GitHub's recommended setting for Pages. Publishing twice in quick succession
+# from the admin portal therefore queues rather than collides.
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -70,10 +71,36 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      deployments: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # A run cancelled *after* it has created a Pages deployment leaves that
+      # deployment stuck "in progress" forever, and every later deploy then
+      # fails with "due to in progress deployment". Publishing several times in
+      # a row from the admin portal is enough to trigger it. Clearing stale
+      # deployments here makes the pipeline self-healing instead of wedged.
+      #
+      # Concurrency guarantees no sibling run is deploying at this point, so
+      # anything still pending is stale by definition.
+      - name: Clear any stuck Pages deployment
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -u
+          ids=$(gh api "repos/$GITHUB_REPOSITORY/deployments?environment=github-pages&per_page=30"                   --jq '.[].id' 2>/dev/null || true)
+          for id in $ids; do
+            state=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$id/statuses?per_page=1"                       --jq '.[0].state // "pending"' 2>/dev/null || echo unknown)
+            case "$state" in
+              pending|queued|in_progress)
+                echo "Clearing stale Pages deployment $id (state: $state)"
+                gh api -X POST "repos/$GITHUB_REPOSITORY/pages/deployments/$id/cancel" >/dev/null 2>&1                   || gh api -X POST "repos/$GITHUB_REPOSITORY/deployments/$id/statuses"                        -f state=inactive >/dev/null 2>&1 || true
+                ;;
+            esac
+          done
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
