@@ -1,0 +1,264 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design tokens.
+
+   One accent, hairline rules, warm paper in light and deep ink in dark.
+   Both themes are defined deliberately — dark is not an inversion.
+   --------------------------------------------------------------------------- */
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Cascadia Code', monospace;
+
+  --color-paper: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f4f0;
+  --color-ink: #16191c;
+  --color-ink-2: #414951;
+  --color-ink-3: #646d77;
+  --color-rule: #e5e3db;
+  --color-rule-strong: #d0cdc3;
+  --color-accent: #2a5470;
+  --color-accent-hover: #1d3e55;
+  --color-accent-wash: #eef2f6;
+
+  --radius-card: 4px;
+
+  --spacing-gutter: 1.5rem;
+
+  --text-display: clamp(2.5rem, 1.4rem + 4.4vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 1.25rem + 1.8vw, 2.5rem);
+  --text-h3: clamp(1.15rem, 1rem + 0.5vw, 1.375rem);
+
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Runtime palette. Deliberately unlayered so it always wins over the layered
+   output of @theme above — @theme seeds Tailwind's utility generation, these
+   blocks decide what the page actually paints in each theme state. */
+:root {
+  --color-paper: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f4f0;
+  --color-ink: #16191c;
+  --color-ink-2: #414951;
+  --color-ink-3: #646d77;
+  --color-rule: #e5e3db;
+  --color-rule-strong: #d0cdc3;
+  --color-accent: #2a5470;
+  --color-accent-hover: #1d3e55;
+  --color-accent-wash: #eef2f6;
+  --shadow-card: 0 1px 2px rgb(22 25 28 / 0.04), 0 8px 24px -16px rgb(22 25 28 / 0.18);
+  --grid-line: rgb(22 25 28 / 0.055);
+  color-scheme: light;
+}
+
+:root:not([data-theme='light']) {
+  @media (prefers-color-scheme: dark) {
+    --color-paper: #0e1013;
+    --color-surface: #14171b;
+    --color-surface-2: #1a1e23;
+    --color-ink: #ecece7;
+    --color-ink-2: #b2bac2;
+    --color-ink-3: #7c8791;
+    --color-rule: #252a30;
+    --color-rule-strong: #363c44;
+    --color-accent: #8fb6d8;
+    --color-accent-hover: #aecbe6;
+    --color-accent-wash: #182430;
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -16px rgb(0 0 0 / 0.7);
+    --grid-line: rgb(236 236 231 / 0.05);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-paper: #0e1013;
+  --color-surface: #14171b;
+  --color-surface-2: #1a1e23;
+  --color-ink: #ecece7;
+  --color-ink-2: #b2bac2;
+  --color-ink-3: #7c8791;
+  --color-rule: #252a30;
+  --color-rule-strong: #363c44;
+  --color-accent: #8fb6d8;
+  --color-accent-hover: #aecbe6;
+  --color-accent-wash: #182430;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -16px rgb(0 0 0 / 0.7);
+  --grid-line: rgb(236 236 231 / 0.05);
+  color-scheme: dark;
+}
+
+/* --------------------------------------------------------------------------- */
+
+@layer base {
+  * {
+    border-color: var(--color-rule);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Sticky header height plus breathing room, so anchors never land under it. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+    font-variant-ligatures: contextual;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-paper);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Component primitives
+   --------------------------------------------------------------------------- */
+
+@layer components {
+  .page-shell {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .page-shell { padding-inline: 2rem; }
+  }
+
+  @media (min-width: 1280px) {
+    .page-shell { padding-inline: 2.5rem; }
+  }
+
+  /* Small uppercase mono label used for metadata throughout the site. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    /* Roomy enough that a wrapped label does not collide with itself. */
+    line-height: 1.45;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  .rule {
+    border: 0;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-card);
+    transition:
+      border-color 200ms var(--ease-out-soft),
+      box-shadow 200ms var(--ease-out-soft),
+      transform 200ms var(--ease-out-soft);
+  }
+
+  .card-interactive:hover {
+    border-color: var(--color-rule-strong);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Fine technical grid, used behind the hero portrait. */
+  .grid-motif {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 32px 32px;
+    /* Fade out at the edges so the grid never terminates in a hard rectangle. */
+    -webkit-mask-image: radial-gradient(115% 100% at 60% 40%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(115% 100% at 60% 40%, #000 40%, transparent 100%);
+  }
+
+  .link-underline {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+    transition: text-decoration-color 160ms var(--ease-out-soft), color 160ms var(--ease-out-soft);
+  }
+
+  .link-underline:hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: currentColor;
+  }
+
+  .prose-measure {
+    max-width: 68ch;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reveal-on-scroll. Opt-in via [data-reveal]; the observer adds .is-visible.
+   Reduced-motion users get the end state immediately.
+   --------------------------------------------------------------------------- */
+
+@layer utilities {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 620ms var(--ease-out-soft),
+      transform 620ms var(--ease-out-soft);
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+}

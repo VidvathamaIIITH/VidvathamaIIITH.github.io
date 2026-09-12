@@ -1,0 +1,42 @@
+{
+  "heading": "Technical Expertise",
+  "intro": "Grouped by domain rather than ranked — the grouping says more than a number would.",
+  "groups": [
+    {
+      "id": "languages",
+      "title": "Languages",
+      "description": "Systems, scientific, and hardware description languages used across research and coursework.",
+      "skills": ["C", "C++", "Python", "Verilog", "RISC-V Assembly", "x86 Assembly", "JavaScript", "SQL", "Bash", "MATLAB", "LaTeX"]
+    },
+    {
+      "id": "ml",
+      "title": "Machine Learning",
+      "description": "Frameworks and libraries used for model development, training, and evaluation.",
+      "skills": ["PyTorch", "TensorFlow", "Scikit-Learn", "HuggingFace Transformers", "LightGBM", "OpenCV", "NumPy", "Pandas", "spaCy"]
+    },
+    {
+      "id": "robotics",
+      "title": "Robotics & 3D",
+      "description": "Simulation, perception, and control stacks for embodied systems.",
+      "skills": ["ROS 2", "Isaac Gym / Isaac Lab", "TacSL", "LEAP Hand", "Topological Navigation", "3D Reconstruction", "Reinforcement Learning"]
+    },
+    {
+      "id": "systems",
+      "title": "Systems",
+      "description": "Low-level systems work, from kernels and syscalls to concurrency and architecture.",
+      "skills": ["Operating Systems", "Linux / Unix", "POSIX", "System Calls", "Signals", "Concurrency", "Parallel Computing", "CPU Architecture", "Digital Systems Design"]
+    },
+    {
+      "id": "frameworks",
+      "title": "Frameworks & Web",
+      "description": "Application and service frameworks for building research tooling and demos.",
+      "skills": ["FastAPI", "Flask", "LangGraph", "Next.js", "React", "Node.js"]
+    },
+    {
+      "id": "tools",
+      "title": "Tools & Databases",
+      "description": "Day-to-day engineering, verification, and data infrastructure.",
+      "skills": ["Git", "Docker", "Valgrind", "iVerilog", "PostgreSQL", "MySQL", "Azure OpenAI", "WandB"]
+    }
+  ]
+}

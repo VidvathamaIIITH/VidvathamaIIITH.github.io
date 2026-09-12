@@ -1,0 +1,87 @@
+{
+  "siteTitle": "Vidvathama Ramesh",
+  "siteTagline": "Undergraduate Researcher — Visual Navigation & Embodied Perception",
+  "siteDescription": "Personal research site of Vidvathama Ramesh, undergraduate researcher at the Robotics Research Center, IIIT Hyderabad — visual navigation, embodied perception, dexterous manipulation, 3D reconstruction, and LLM systems.",
+  "siteUrl": "https://vidvathamaiiith.github.io",
+  "ogImage": "media/og-image.png",
+  "keywords": [
+    "Vidvathama Ramesh",
+    "IIIT Hyderabad",
+    "Robotics Research Center",
+    "visual navigation",
+    "embodied AI",
+    "3D reconstruction",
+    "dexterous manipulation",
+    "LLM routing",
+    "multi-agent reinforcement learning"
+  ],
+  "nav": [
+    {
+      "id": "home",
+      "label": "Home",
+      "enabled": true
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "enabled": true
+    },
+    {
+      "id": "research",
+      "label": "Research",
+      "enabled": true
+    },
+    {
+      "id": "current",
+      "label": "Current",
+      "enabled": true
+    },
+    {
+      "id": "publications",
+      "label": "Publications",
+      "enabled": true
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "enabled": true
+    },
+    {
+      "id": "coursework",
+      "label": "Coursework",
+      "enabled": true
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "enabled": true
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "enabled": true
+    }
+  ],
+  "sections": {
+    "about": true,
+    "research": true,
+    "current": true,
+    "publications": true,
+    "projects": true,
+    "coursework": true,
+    "experience": true,
+    "skills": true,
+    "contact": true
+  },
+  "contact": {
+    "heading": "Contact",
+    "statement": "Interested in research collaboration, technical discussion, or building intelligent systems? I'd be happy to connect.",
+    "availability": "Open to research collaboration and graduate research opportunities.",
+    "responseNote": "Email is the fastest way to reach me."
+  },
+  "footer": {
+    "copyrightName": "Vidvathama Ramesh",
+    "note": "",
+    "signature": "For the glory of Mankind!"
+  }
+}

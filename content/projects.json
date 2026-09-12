@@ -1,0 +1,143 @@
+{
+  "heading": "Projects",
+  "intro": "Substantial technical work, from LLM routing infrastructure to a pipelined processor. Source is linked for each.",
+  "items": [
+    {
+      "id": "adaptive-semantic-pipeline",
+      "title": "Adaptive Semantic Pipeline for LLM Routing",
+      "subtitle": "ASP",
+      "category": "LLM Systems",
+      "date": "January 2026",
+      "sortDate": "2026-01",
+      "status": "Completed",
+      "featured": true,
+      "description": "An eight-stage routing pipeline that decomposes prompts into a semantic DAG and dispatches sub-tasks to strong or weak models, cutting inference cost by roughly half without losing accuracy.",
+      "details": [
+        "Architected an 8-stage LLM routing pipeline decomposing prompts into a semantic DAG (spaCy, SentenceTransformer, constituency parsing) and routing sub-tasks to strong/weak models via a 27-feature LightGBM router with BFS strong-inheritance — 85.66% accuracy, 88.04% F1 — cutting inference cost ~49% at 131 ms mean latency.",
+        "Fine-tuned a dual-head DistilBERT (11-class intent plus complexity regression; 83.32% accuracy, 85.32% F1) and built an async DAG execution engine with speculative execution, semantic caching, and a context blackboard, saving 60–80% of tokens.",
+        "Layered a 3-stage safety, NLI-verification, and LLM-as-a-Judge stack on top of the routing and aggregation pipeline."
+      ],
+      "technologies": ["DistilBERT", "PyTorch", "LightGBM", "spaCy", "SentenceTransformer", "Python"],
+      "metrics": [
+        { "label": "Router accuracy", "value": "85.66%" },
+        { "label": "Router F1", "value": "88.04%" },
+        { "label": "Cost reduction", "value": "~49%" },
+        { "label": "Mean latency", "value": "131 ms" }
+      ],
+      "github": "https://github.com/VidvathamaIIITH/Adaptive-Semantic-Pipeline",
+      "demo": "",
+      "report": "",
+      "researchConnection": "asp-routing-paper",
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "canvasmind",
+      "title": "CanvasMind",
+      "subtitle": "Multi-Agent Inference-Time RL for Creative AI",
+      "category": "Multi-Agent RL",
+      "date": "May 2026",
+      "sortDate": "2026-05",
+      "status": "Research",
+      "featured": true,
+      "description": "Generative agents co-paint a shared canvas under an inference-time RL layer, with reward misalignment treated as the object of study rather than a bug to paper over.",
+      "details": [
+        "Built a multi-agent creative-AI system in which generative agents co-paint a shared canvas under an inference-time RL layer using best-of-N search, a batched reward model, a persistent UCB1 bandit, and reward-triggered Reflexion self-correction.",
+        "Modelled agent interactions with misaligned per-agent rewards as a general-sum game; applied Shapley-value, empowerment, and Goodhart diagnostics to identify and correct 4 RL defects, lifting composite quality from -0.05 to +1.66 at equal compute across a 4,000-session ablation."
+      ],
+      "technologies": ["FastAPI", "Azure OpenAI", "Python", "Reinforcement Learning", "UCB1", "Reflexion"],
+      "metrics": [
+        { "label": "Composite quality", "value": "-0.05 → +1.66" },
+        { "label": "Ablation scale", "value": "4,000 sessions" },
+        { "label": "RL defects corrected", "value": "4" }
+      ],
+      "github": "https://github.com/VidvathamaIIITH/RL_Multi_Agent_ART",
+      "demo": "",
+      "report": "",
+      "researchConnection": "canvasmind",
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "polyquery",
+      "title": "PolyQuery",
+      "subtitle": "Multi-Model Relational Algebra Engine",
+      "category": "Systems",
+      "date": "November 2025",
+      "sortDate": "2025-11",
+      "status": "Completed",
+      "featured": true,
+      "description": "A disk-backed C++17 database engine unifying relational algebra, graph traversal, and vector search under a fixed ten-page memory ceiling.",
+      "details": [
+        "Engineered a high-performance, integer-optimised C++17 RDBMS unifying relational algebra, graph processing, and high-dimensional vector search over a custom block-based buffer manager with external-memory algorithms (external merge sort, hashing, B-Tree).",
+        "Implemented multi-threaded transactions with Wait-Die concurrency control and page-granular shared/exclusive locking (deadlock-free), disk-backed BFS path queries, and KNN search (Euclidean/Cosine) via a bounded min-heap under a fixed 10-page memory ceiling."
+      ],
+      "technologies": ["C++17", "Concurrency", "External-Memory Algorithms", "B-Tree", "Vector Search"],
+      "metrics": [
+        { "label": "Memory ceiling", "value": "10 pages" },
+        { "label": "Concurrency control", "value": "Wait-Die" },
+        { "label": "Deadlock-free", "value": "Yes" }
+      ],
+      "github": "https://github.com/VidvathamaIIITH/DMBS_Poly_Query-Nier",
+      "demo": "",
+      "report": "",
+      "researchConnection": "",
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "riscv-processor",
+      "title": "32-bit RISC-V Processor",
+      "subtitle": "Sequential to 5-stage pipeline",
+      "category": "Processor Architecture",
+      "date": "May 2025",
+      "sortDate": "2025-05",
+      "status": "Completed",
+      "featured": true,
+      "description": "A 32-bit RISC-V core in Verilog, scaled from a single-cycle datapath to a five-stage pipeline with full hazard resolution and a Python assembler.",
+      "details": [
+        "Designed a 32-bit RISC-V processor in Verilog, scaling from a single-cycle sequential datapath to a 5-stage IF/ID/EX/MEM/WB pipeline, including PC, register file, instruction/data memories, ALU/control, and immediate-generation units for R-, I-, S-, and B-type instructions.",
+        "Engineered forwarding and hazard-detection units for data, double-data, load-store, control, and load-use hazards using forwarding, stalls, and branch flushes; built a Python assembler and iVerilog testbenches validating Fibonacci, linear search, vector addition, and summation programs."
+      ],
+      "technologies": ["Verilog", "iVerilog", "RISC-V Assembly", "Python", "Digital Design"],
+      "metrics": [
+        { "label": "Pipeline", "value": "5-stage" },
+        { "label": "Instruction types", "value": "R, I, S, B" },
+        { "label": "Hazards handled", "value": "5 classes" }
+      ],
+      "github": "https://github.com/VidvathamaIIITH/RISC-V--Processor-Architecture",
+      "demo": "",
+      "report": "",
+      "researchConnection": "",
+      "image": "",
+      "imageCaption": ""
+    },
+    {
+      "id": "posix-shell",
+      "title": "POSIX-Core C Shell",
+      "subtitle": "Systems programming suite",
+      "category": "Systems",
+      "date": "August 2025",
+      "sortDate": "2025-08",
+      "status": "Completed",
+      "featured": true,
+      "description": "A modular Unix shell in C with unlimited pipelines, full redirection, twelve-plus built-ins, and verified leak-free execution.",
+      "details": [
+        "Developed a modular execvp-based Unix shell with foreground/background execution, unlimited pipelines, full I/O redirection, and .myshrc alias resolution; verified leak-free execution with Valgrind.",
+        "Implemented 12+ built-ins (hop, reveal, seek, log, proclore, activities, fg/bg, neonate, and an iMan TCP man-page fetcher) with robust SIGINT/SIGTSTP/SIGCHLD handling and asynchronous child reaping."
+      ],
+      "technologies": ["C", "Unix Syscalls", "Signals", "Valgrind", "POSIX", "Sockets"],
+      "metrics": [
+        { "label": "Built-ins", "value": "12+" },
+        { "label": "Memory", "value": "Leak-free (Valgrind)" },
+        { "label": "Pipelines", "value": "Unlimited" }
+      ],
+      "github": "https://github.com/VidvathamaIIITH/Shell_POSIX-Nier_Core",
+      "demo": "",
+      "report": "",
+      "researchConnection": "",
+      "image": "",
+      "imageCaption": ""
+    }
+  ]
+}

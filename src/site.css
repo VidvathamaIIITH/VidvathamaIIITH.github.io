@@ -1,0 +1,366 @@
+/* ---------------------------------------------------------------------------
+   Public page. Deliberately plain: one 800px column, Lato, blue links, a
+   narrow date column beside each entry. Layout after Jon Barron's template.
+   Everything is scoped to .site / .site-body so the admin portal keeps its own
+   styles.
+   --------------------------------------------------------------------------- */
+
+.site-body {
+  --s-bg: #ffffff;
+  --s-text: #1c1c1c;
+  --s-muted: #5e5e5e;
+  --s-link: #1667c0;
+  --s-link-line: rgb(22 103 192 / 0.35);
+  --s-hover: #b85e0c;
+  --s-hl: #fff8cc;
+  --s-rule: #e6e6e6;
+  --s-code: #f6f6f4;
+  --s-box-text: #1c1c1c;
+  --s-box-1: #dbe8f5;
+  --s-box-2: #f0e0a4;
+  --s-box-3: #d5eadb;
+  --s-box-4: #e8dcf0;
+  background: var(--s-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .site-body {
+    --s-bg: #151515;
+    --s-text: #e3e3e3;
+    --s-muted: #a6a6a6;
+    --s-link: #6cb0ff;
+    --s-link-line: rgb(108 176 255 / 0.4);
+    --s-hover: #f3a452;
+    --s-hl: #2b2918;
+    --s-rule: #2c2c2c;
+    --s-code: #1d1d1d;
+    --s-box-text: #e3e3e3;
+    --s-box-1: #22313f;
+    --s-box-2: #3d3420;
+    --s-box-3: #213428;
+    --s-box-4: #33273b;
+  }
+}
+
+:root[data-theme='dark'] .site-body {
+  --s-bg: #151515;
+  --s-text: #e3e3e3;
+  --s-muted: #a6a6a6;
+  --s-link: #6cb0ff;
+  --s-link-line: rgb(108 176 255 / 0.4);
+  --s-hover: #f3a452;
+  --s-hl: #2b2918;
+  --s-rule: #2c2c2c;
+  --s-code: #1d1d1d;
+  --s-box-text: #e3e3e3;
+  --s-box-1: #22313f;
+  --s-box-2: #3d3420;
+  --s-box-3: #213428;
+  --s-box-4: #33273b;
+}
+
+.site {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0 36px;
+  color: var(--s-text);
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.site h1,
+.site h2,
+.site h3 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  color: var(--s-text);
+  letter-spacing: 0;
+  text-wrap: wrap;
+}
+
+.site p {
+  margin: 0;
+}
+
+.site a {
+  color: var(--s-link);
+  text-decoration: none;
+}
+
+.site a:hover,
+.site a:focus-visible {
+  color: var(--s-hover);
+}
+
+/* Links sitting inside running text get a faint underline so they are not
+   distinguished by colour alone. */
+.site .s-prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--s-link-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.site .s-prose a:hover {
+  text-decoration-color: currentColor;
+}
+
+.site .s-muted {
+  color: var(--s-muted);
+}
+
+/* --------------------------------------------------------------- header */
+
+.s-header {
+  display: flex;
+  align-items: center;
+  padding: 30px 16px 6px;
+}
+
+.s-intro {
+  width: 63%;
+  padding-right: 3%;
+}
+
+.site .s-name {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.s-intro .s-prose p + p {
+  margin-top: 12px;
+}
+
+.site .s-links {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.s-sep {
+  color: var(--s-muted);
+  padding: 0 7px;
+}
+
+.s-photo {
+  width: 37%;
+  padding-left: 3%;
+}
+
+.s-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-radius: 50%;
+}
+
+/* -------------------------------------------------------------- sections */
+
+.s-section {
+  padding: 22px 16px 0;
+}
+
+.site .s-section > h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.site .s-lead {
+  margin-bottom: 4px;
+}
+
+.s-hl-inline {
+  background: var(--s-hl);
+  padding: 0 2px;
+}
+
+.s-list {
+  margin-top: 8px;
+}
+
+.s-row {
+  display: grid;
+  grid-template-columns: 21% 1fr;
+  column-gap: 16px;
+  margin: 0 -16px;
+  padding: 13px 16px;
+}
+
+.s-row.is-hl {
+  background: var(--s-hl);
+}
+
+.site .s-when {
+  color: var(--s-muted);
+  font-size: 14px;
+  padding-top: 1px;
+}
+
+.site .s-row h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.site .s-meta {
+  margin-top: 1px;
+}
+
+.site .s-desc {
+  margin-top: 6px;
+}
+
+.site .s-actions {
+  margin-top: 3px;
+}
+
+.site .s-linkbtn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--s-link);
+  cursor: pointer;
+}
+
+.site .s-linkbtn:hover,
+.site .s-linkbtn:focus-visible {
+  color: var(--s-hover);
+}
+
+.site .s-bibtex {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  overflow-x: auto;
+  background: var(--s-code);
+  border: 1px solid var(--s-rule);
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.site .s-news {
+  margin: 6px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.site .s-news li {
+  margin: 5px 0;
+}
+
+/* --------------------------------------------------------- miscellanea */
+
+.s-boxcell {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.s-box {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: var(--s-box-text);
+  text-align: center;
+}
+
+.site .s-box h3 {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--s-box-text);
+}
+
+.site .s-misc p + p {
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.site .s-footer {
+  padding: 34px 16px 0;
+  text-align: right;
+  font-size: 13px;
+  color: var(--s-muted);
+}
+
+.site .s-signature {
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--s-muted);
+}
+
+/* ------------------------------------------------------------- controls */
+
+.site .s-theme {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--s-muted);
+  cursor: pointer;
+}
+
+.site .s-theme:hover {
+  color: var(--s-text);
+}
+
+.site .s-skip {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+}
+
+.site .s-skip:focus {
+  left: 12px;
+  z-index: 10;
+  padding: 6px 10px;
+  background: var(--s-bg);
+  border: 1px solid var(--s-rule);
+}
+
+/* ---------------------------------------------------------------- mobile */
+
+@media (max-width: 640px) {
+  .s-header {
+    flex-direction: column-reverse;
+    padding-top: 48px;
+  }
+
+  .s-intro,
+  .s-photo {
+    width: 100%;
+    padding: 0;
+  }
+
+  .s-photo {
+    max-width: 190px;
+    margin: 0 auto 14px;
+  }
+
+  .s-row {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+
+  .s-boxcell {
+    justify-content: flex-start;
+    margin-bottom: 6px;
+  }
+}

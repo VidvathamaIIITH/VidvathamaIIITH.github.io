@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Local environment — never commit real values
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Source assets kept outside the deployed site.
+# The published copies live in public/media and public/docs.
+Images/
+Resume_CV/
+
+# Logs
+*.log
+npm-debug.log*
