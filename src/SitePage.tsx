@@ -94,7 +94,7 @@ export default function SitePage() {
           </p>
         </div>
         <div className="s-photo">
-          <img src={asset(profile.portrait)} alt={profile.portraitAlt} width={1133} height={1417} fetchPriority="high" />
+          <img src={asset(profile.portrait)} alt={profile.portraitAlt} width={640} height={640} fetchPriority="high" />
         </div>
       </header>
 

@@ -33,7 +33,13 @@ copyFileSync(indexPath, join(dist, '404.html'));
 
 // 2. Rewrite absolute URLs baked into the HTML head.
 let html = readFileSync(indexPath, 'utf8');
+// The no-JavaScript fallback links to the CV and résumé. Their filenames change
+// whenever a new version is uploaded, so fill them in from content rather than
+// hard-coding names that go stale.
+const profile = JSON.parse(readFileSync('content/profile.json', 'utf8'));
 html = html
+  .replace('%CV_HREF%', `${base}${profile.documents.cv.file}`)
+  .replace('%RESUME_HREF%', `${base}${profile.documents.resume.file}`)
   // The <noscript> fallback links are authored root-relative; on a project
   // site they need the base prefix that Vite applies to bundled assets.
   .replace(/(<noscript>[\s\S]*?<\/noscript>)/, (block) =>
